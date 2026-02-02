@@ -1,0 +1,14 @@
+{
+  "hero": [
+    "Bienvenido a nuestro sitio web.",
+    "Descubre lo que podemos ofrecerte."
+  ],
+  "about": [
+    "Somos un equipo apasionado por la tecnología.",
+    "Nos especializamos en desarrollo web y móvil."
+  ],
+  "contact": [
+    "Contáctanos para más información.",
+    "Nuestro equipo estará encantado de ayudarte."
+  ]
+}
