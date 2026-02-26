@@ -1,16 +1,99 @@
-# React + Vite
+# 🏝️ Nook Plaza
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Status](https://img.shields.io/badge/status-in%20development-yellow.svg)
+![License](https://img.shields.io/badge/license-MIT-green)
+![React](https://img.shields.io/badge/React-18-blue.svg)
+![Vite](https://img.shields.io/badge/Vite-5-purple.svg)
 
-Currently, two official plugins are available:
+A website built with React and Vite inspired by the Animal Crossing universe. Nook Plaza is a community platform designed to give players visibility for their islands and provide a way to preserve memories of their in-game worlds. Users can explore islands from other players, discover neighbors, and connect with the Animal Crossing community.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The website is designed to be fully responsive, ensuring a seamless experience across desktop and mobile devices.
 
-## React Compiler
+## 🚀 Getting Started
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+### Clone Repository
 
-## Expanding the ESLint configuration
+```bash
+git clone https://github.com/your-username/nook-plaza
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Install Dependencies
+
+```bash
+cd nook-plaza-css
+npm install
+```
+
+### Run Development Server
+
+```bash
+npm run dev
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+**Open the browser and navigate to `http://localhost:5173` to view the web**
+
+## 🧩 Technologies
+
+- React 18
+- Vite 5
+- Wouter (client-side routing)
+- CSS3 (modules per component)
+
+## 📂 Project Structure
+
+````
+nook-plaza/
+│
+├── package.json
+├── vite.config.js
+├── README.md
+│
+├── client/
+│   ├── public/
+│   └── src/
+│       ├── assets/
+│       │   ├── bg/
+│       │   ├── card/
+│       │   ├── icon/
+│       │   └── pj/
+│       ├── components/
+│       │   ├── ErrorBoundary/
+│       │   ├── Footer/
+│       │   ├── Header/
+│       │   ├── IslandCard/
+│       │   ├── Map/
+│       │   ├── RssFeed/
+│       │   └── ui/
+│       ├── contexts/
+│       ├── data/
+│       ├── hooks/
+│       ├── lib/
+│       ├── pages/
+│       │   ├── About/
+│       │   ├── Contact/
+│       │   ├── Home/
+│       │   ├── NotFound/
+│       │   └── Rss/
+│       └── styles/
+│
+└── shared/
+````
+
+## 📄 Pages
+
+- **Home** — Main landing page with island showcase and category filters (All, Pueblos, Vecinos)
+- **About** — Information about the Nook Plaza project and its features
+- **Contact** — Contact form for the community
+- **RSS** — RSS feed with latest community news
+- **Terms** — Terms of use
+- **404 Not Found** — Custom error page
+
+## ✒️ Author
+
+Víctor Gabriel Vergara Alejandro

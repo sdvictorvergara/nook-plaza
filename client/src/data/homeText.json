@@ -1,0 +1,14 @@
+{
+  "whoText": [
+    "¿Quiénes somos?",
+    "Esto es un proyecto con la finalidad de dar visibilidad a las islas de los jugadores y darles una forma de no perder los recuerdos de sus islas."
+  ],
+  "about": [
+    "¿Qué hacemos?",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum felis nunc, et faucibus libero feugiat ut. Aliquam eget blandit enim. Nunc quis libero sed arcu luctus faucibus. Morbi facilisis mi erat, ac imperdiet odio pretium eu. Sed vehicula leo ut lectus mollis hendrerit. Phasellus sed consequat turpis. Curabitur congue convallis elit, in tristique ipsum varius quis. Quisque eu nibh eget ex semper dignissim lobortis at lacus. Phasellus justo magna, vehicula vel enim a, porttitor pellentesque sapien. Curabitur sed tristique velit. Nulla mollis ipsum sed urna fringilla, placerat tempor arcu laoreet."
+  ],
+  "contact": [
+    "Contáctanos para más información.",
+    "Nuestro equipo estará encantado de ayudarte."
+  ]
+}

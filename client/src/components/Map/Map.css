@@ -1,0 +1,24 @@
+@import "../../styles/global.css";
+
+.map-container {
+  margin-top: var(--spacing-lg);
+}
+
+.map-title {
+  font-size: 1.1rem;
+  color: var(--color-text-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.map-iframe {
+  width: 100%;
+  height: 300px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+
+.map-caption {
+  margin-top: var(--spacing-xs);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
