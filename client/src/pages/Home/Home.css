@@ -426,24 +426,6 @@ main {
   }
 }
 
-.islands-search {
-  width: 100%;
-  max-width: 420px;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border: 2px solid var(--color-border);
-  border-radius: var(--border-radius);
-  font-size: 0.95rem;
-  font-family: inherit;
-  background: #fff;
-  color: var(--color-text-dark);
-  transition: border-color var(--transition-speed);
-}
-
-.islands-search:focus {
-  outline: none;
-  border-color: var(--color-primary-dark);
-}
-
 .add-island-btn {
   background-color: var(--color-accent-green);
   color: #fff;
@@ -475,24 +457,6 @@ main {
   margin-top: var(--spacing-lg);
 }
 
-.islands-search {
-  width: 100%;
-  max-width: 400px;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border: 2px solid var(--color-border);
-  border-radius: var(--border-radius);
-  font-size: 0.95rem;
-  font-family: inherit;
-  background: #fff;
-  color: var(--color-text-dark);
-  transition: border-color var(--transition-speed);
-}
-
-.islands-search:focus {
-  outline: none;
-  border-color: var(--color-primary-dark);
-}
-
 .add-island-btn {
   background-color: var(--color-accent-green);
   color: #fff;
@@ -522,7 +486,7 @@ main {
   text-align: center;
   padding: var(--spacing-xl);
 }
-/* ── Firebase feedback ────────────────────────────────────────────────────── */
+
 .islands-loading {
   text-align: center;
   padding: var(--spacing-xl);
@@ -532,8 +496,15 @@ main {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.4; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
 }
 
 .islands-error {

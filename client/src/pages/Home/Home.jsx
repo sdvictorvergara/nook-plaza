@@ -18,7 +18,6 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [searchQuery, setSearchQuery] = useState("");
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [editingIsland, setEditingIsland] = useState(null);
   const [isSaving, setIsSaving] = useState(false);
@@ -33,11 +32,7 @@ export default function Home() {
   }, []);
 
   const filteredIslands = islands.filter((island) => {
-    const matchesCategory = selectedCategory === "all" || island.category === selectedCategory;
-    const matchesSearch =
-      island.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      island.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    return selectedCategory === "all" || island.category === selectedCategory;
   });
 
   const withSaving = async (fn) => {
@@ -120,16 +115,6 @@ export default function Home() {
         <section id="islands-section" className="islands-section">
           <div className="islands-header">
             <h2>Nuestras Islas</h2>
-
-            <input
-              className="islands-search"
-              type="text"
-              placeholder="Buscar por nombre o descripción..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              aria-label="Buscar islas"
-            />
-
             <div className="category-filter">
               {ALL_CATEGORIES.map((cat) => (
                 <button
@@ -149,7 +134,7 @@ export default function Home() {
 
           {error && (
             <p className="islands-error" role="alert">
-              ⚠️ {error}
+              {error}
               <button onClick={() => setError(null)} className="islands-error-close">✕</button>
             </p>
           )}

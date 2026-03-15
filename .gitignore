@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 # ===========================
 # 🔐 Variables de entorno y API keys
 # ===========================
+=======
+# Variables de entorno y API keys
+>>>>>>> abf07a4 (input bar deleted)
 .env
 .env.local
 .env.development
@@ -10,6 +14,7 @@
 .env.production
 .env.production.local
 
+<<<<<<< HEAD
 # ===========================
 # 📦 Dependencias
 # ===========================
@@ -19,19 +24,31 @@ client/node_modules/
 # ===========================
 # 🏗️ Build / Dist
 # ===========================
+=======
+# Dependencias
+node_modules/
+client/node_modules/
+
+# Build / Dist
+>>>>>>> abf07a4 (input bar deleted)
 dist/
 dist-ssr/
 build/
 client/dist/
 
+<<<<<<< HEAD
 # ===========================
 # 🔥 Firebase
 # ===========================
+=======
+# 🔥 Firebase
+>>>>>>> abf07a4 (input bar deleted)
 .firebase/
 firebase-debug.log
 firestore-debug.log
 ui-debug.log
 database-rules.json
+<<<<<<< HEAD
 # Si usas emuladores locales:
 .runtimeconfig.json
 
@@ -44,6 +61,15 @@ coverage/
 # ===========================
 # 🗂️ Cache y temporales
 # ===========================
+=======
+.runtimeconfig.json
+
+# Testing / Coverage
+coverage/
+*.lcov
+
+# Cache y temporales
+>>>>>>> abf07a4 (input bar deleted)
 .cache/
 .parcel-cache/
 .vite/
@@ -53,9 +79,13 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+<<<<<<< HEAD
 # ===========================
 # 💻 IDEs y editores
 # ===========================
+=======
+# IDEs y editores
+>>>>>>> abf07a4 (input bar deleted)
 .vscode/
 .idea/
 *.suo
@@ -66,9 +96,13 @@ pnpm-debug.log*
 .DS_Store
 Thumbs.db
 
+<<<<<<< HEAD
 # ===========================
 # 🔑 Claves y certificados
 # ===========================
+=======
+# Claves y certificados
+>>>>>>> abf07a4 (input bar deleted)
 *.pem
 *.key
 *.cert
