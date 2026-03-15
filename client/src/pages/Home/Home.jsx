@@ -1,39 +1,79 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import IslandCard from "@/components/IslandCard/IslandCard";
+import IslandForm from "@/components/IslandForm/IslandForm";
 import homeText from "@/data/homeText.json";
 import nookPlazaLogo from "@/assets/icon/nookPlazaLogo.png";
 import whoImage from "@/assets/card/whoCard.svg";
 import aboutImage from "@/assets/card/aboutCard.svg";
 import backgroundImage from "@/assets/bg/Background.svg";
+import { subscribeToIslands, addIsland, updateIsland, deleteIsland } from "@/firebase/islandsService";
 import "./Home.css";
 
-const BACKGROUND_IMAGE = backgroundImage;
-
-const islandsData = [
-  {
-    id: 1,
-    name: "Pueblos Integrantes",
-    description: "Esto es un proyecto con la finalidad de dar visibilidad a las islas de los jugadores y darles una forma de no perder los recuerdos de sus islas.",
-    image: "../../assets/pj/Casas.png",
-  },
-  {
-    id: 2,
-    name: "Vecinos",
-    description: "Esto es un proyecto con la finalidad de dar visibilidad a las islas de los jugadores y darles una forma de no perder los recuerdos de sus islas.",
-    image: "../../assets/pj/vecinos.png",
-  },
-  {
-    id: 3,
-    name: "Por qué unirse",
-    description: "Esto es un proyecto con la finalidad de dar visibilidad a las islas de los jugadores y darles una forma de no perder los recuerdos de sus islas.",
-    image: "../../assets/pj/aldeanos.png",
-  },
-];
+const ALL_CATEGORIES = ["all", "rural", "oriental", "costera", "fantasía"];
 
 export default function Home() {
+  const [islands, setIslands] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [editingIsland, setEditingIsland] = useState(null);
+  const [isSaving, setIsSaving] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    return subscribeToIslands((data) => {
+      setIslands(data);
+      setIsLoading(false);
+      setError(null);
+    });
+  }, []);
+
+  const filteredIslands = islands.filter((island) => {
+    const matchesCategory = selectedCategory === "all" || island.category === selectedCategory;
+    const matchesSearch =
+      island.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      island.description.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  const withSaving = async (fn) => {
+    try {
+      setIsSaving(true);
+      await fn();
+    } catch {
+      setError("No se pudo completar la operación. Inténtalo de nuevo.");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleSave = (formData) =>
+    withSaving(async () => {
+      if (editingIsland) {
+        await updateIsland(editingIsland.id, formData);
+      } else {
+        await addIsland(formData);
+      }
+      setIsFormVisible(false);
+      setEditingIsland(null);
+    });
+
+  const handleEdit = (island) => {
+    setEditingIsland(island);
+    setIsFormVisible(true);
+  };
+
+  const handleDelete = (id) =>
+    withSaving(() => deleteIsland(id));
+
+  const handleCancelForm = () => {
+    setIsFormVisible(false);
+    setEditingIsland(null);
+  };
 
   return (
     <div className="home-container">
@@ -41,11 +81,7 @@ export default function Home() {
       <main>
         <section
           className="intro-card"
-          style={{
-            backgroundImage: `url(${BACKGROUND_IMAGE})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: "cover", backgroundPosition: "center" }}
         >
           <div className="intro-card-content">
             <figure>
@@ -54,9 +90,7 @@ export default function Home() {
             </figure>
             <div className="eslogan">
               <p>Lista para visitar otros pueblos?</p>
-              <a href="#islands-section" className="island-viewer-btn">
-                VER ISLAS
-              </a>
+              <a href="#islands-section" className="island-viewer-btn">VER ISLAS</a>
             </div>
           </div>
         </section>
@@ -86,33 +120,62 @@ export default function Home() {
         <section id="islands-section" className="islands-section">
           <div className="islands-header">
             <h2>Nuestras Islas</h2>
+
+            <input
+              className="islands-search"
+              type="text"
+              placeholder="Buscar por nombre o descripción..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              aria-label="Buscar islas"
+            />
+
             <div className="category-filter">
-              <button
-                className={`filter-btn ${selectedCategory === "all" ? "active" : ""}`}
-                onClick={() => setSelectedCategory("all")}
-              >
-                Todas
-              </button>
-              <button
-                className={`filter-btn ${selectedCategory === "pueblos" ? "active" : ""}`}
-                onClick={() => setSelectedCategory("pueblos")}
-              >
-                Pueblos
-              </button>
-              <button
-                className={`filter-btn ${selectedCategory === "vecinos" ? "active" : ""}`}
-                onClick={() => setSelectedCategory("vecinos")}
-              >
-                Vecinos
-              </button>
+              {ALL_CATEGORIES.map((cat) => (
+                <button
+                  key={cat}
+                  className={`filter-btn ${selectedCategory === cat ? "active" : ""}`}
+                  onClick={() => setSelectedCategory(cat)}
+                >
+                  {cat === "all" ? "Todas" : cat.charAt(0).toUpperCase() + cat.slice(1)}
+                </button>
+              ))}
             </div>
+
+            <button className="add-island-btn" onClick={() => { setEditingIsland(null); setIsFormVisible(true); }}>
+              + Añadir isla
+            </button>
           </div>
 
-          <div className="islands-container">
-            {islandsData.map((island) => (
-              <IslandCard key={island.id} island={island} />
-            ))}
-          </div>
+          {error && (
+            <p className="islands-error" role="alert">
+              ⚠️ {error}
+              <button onClick={() => setError(null)} className="islands-error-close">✕</button>
+            </p>
+          )}
+
+          {isFormVisible && (
+            <div className="islands-form-overlay">
+              <IslandForm
+                initialData={editingIsland}
+                onSave={handleSave}
+                onCancel={handleCancelForm}
+                saving={isSaving}
+              />
+            </div>
+          )}
+
+          {isLoading ? (
+            <p className="islands-loading">Cargando islas…</p>
+          ) : filteredIslands.length === 0 ? (
+            <p className="islands-empty">No se encontraron islas con ese criterio.</p>
+          ) : (
+            <div className="islands-container">
+              {filteredIslands.map((island) => (
+                <IslandCard key={island.id} island={island} onEdit={handleEdit} onDelete={handleDelete} />
+              ))}
+            </div>
+          )}
         </section>
       </main>
       <Footer />

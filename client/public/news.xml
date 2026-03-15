@@ -1,0 +1,75 @@
+<rss version="2.0">
+  <channel>
+    <title>Animal Crossing Noticias</title>
+    <link>https://nook-plaza-7babb.web.app/</link>
+    <description>Latest news from the project</description>
+    <language>es</language>
+
+    <item>
+      <title>Animal Crossing: New Horizons alcanza 44 millones de copias vendidas</title>
+      <description>
+        <img src="https://nook-plaza-7babb.web.app/static/sales_milestone_44m.webp" alt="Imagen de la noticia"/>
+        <p>Nintendo confirma que el juego sigue siendo uno de los títulos más vendidos de Switch, con millones de jugadores activos en todo el mundo.</p>
+      </description>
+      <link>https://nook-plaza-7babb.web.app/news/AC-44M-SALES</link>
+      <guid isPermaLink="true">https://nook-plaza-7babb.web.app/news/AC-44M-SALES</guid>
+      <pubDate>Sun, 15 Mar 2026 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Nueva actualización gratuita trae eventos de temporada</title>
+      <description>
+        <img src="https://nook-plaza-7babb.web.app/static/seasonal_update_2026.webp" alt="Imagen de la noticia"/>
+        <p>Los jugadores podrán disfrutar de nuevas decoraciones, personajes especiales y misiones limitadas durante las próximas semanas.</p>
+      </description>
+      <link>https://nook-plaza-7babb.web.app/news/SEASONAL-UPDATE-2026</link>
+      <guid isPermaLink="true">https://nook-plaza-7babb.web.app/news/SEASONAL-UPDATE-2026</guid>
+      <pubDate>Sun, 15 Mar 2026 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Los mejores diseños de islas de la comunidad</title>
+      <description>
+        <img src="https://nook-plaza-7babb.web.app/static/community_designs_top.webp" alt="Imagen de la noticia"/>
+        <p>Repasamos las islas más creativas del mes: desde diseños medievales hasta paraísos tropicales modernos.</p>
+      </description>
+      <link>https://nook-plaza-7babb.web.app/news/COMMUNITY-DESIGNS-MARCH</link>
+      <guid isPermaLink="true">https://nook-plaza-7babb.web.app/news/COMMUNITY-DESIGNS-MARCH</guid>
+      <pubDate>Sun, 15 Mar 2026 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Guía: cómo conseguir a los aldeanos más raros</title>
+      <description>
+        <img src="https://nook-plaza-7babb.web.app/static/villager_hunting_guide.webp" alt="Imagen de la noticia"/>
+        <p>Los métodos más efectivos para invitar a los personajes más buscados de Animal Crossing a tu isla.</p>
+      </description>
+      <link>https://nook-plaza-7babb.web.app/news/RARE-VILLAGER-GUIDE</link>
+      <guid isPermaLink="true">https://nook-plaza-7babb.web.app/news/RARE-VILLAGER-GUIDE</guid>
+      <pubDate>Sun, 15 Mar 2026 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Tom Nook celebra el aniversario con regalos especiales</title>
+      <description>
+        <img src="https://nook-plaza-7babb.web.app/static/anniversary_event_tomnook.webp" alt="Imagen de la noticia"/>
+        <p>En el cuarto aniversario del lanzamiento, Tom Nook ha preparado sorpresas para todos los habitantes de las islas.</p>
+      </description>
+      <link>https://nook-plaza-7babb.web.app/news/ANNIVERSARY-CELEBRATION</link>
+      <guid isPermaLink="true">https://nook-plaza-7babb.web.app/news/ANNIVERSARY-CELEBRATION</guid>
+      <pubDate>Sun, 15 Mar 2026 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Torneo de diseño de islas: ¡inscríbete ahora!</title>
+      <description>
+        <img src="https://nook-plaza-7babb.web.app/static/island_contest_signup.webp" alt="Imagen de la noticia"/>
+        <p>La comunidad de Nook Plaza organiza su primer torneo de diseño. Los ganadores verán su isla destacada en portada.</p>
+      </description>
+      <link>https://nook-plaza-7babb.web.app/news/ISLAND-CONTEST-REGISTRATION</link>
+      <guid isPermaLink="true">https://nook-plaza-7babb.web.app/news/ISLAND-CONTEST-REGISTRATION</guid>
+      <pubDate>Sun, 15 Mar 2026 12:00:00 GMT</pubDate>
+    </item>
+
+  </channel>
+</rss>

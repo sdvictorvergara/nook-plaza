@@ -1,0 +1,90 @@
+@import "../../styles/global.css";
+
+.island-form {
+  background: var(--color-bg-light);
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  max-width: 500px;
+  width: 100%;
+}
+
+.island-form-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.island-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.island-form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.island-form-group input,
+.island-form-group textarea,
+.island-form-group select {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--color-text-dark);
+  transition: border-color var(--transition-speed);
+}
+
+.island-form-group input:focus,
+.island-form-group textarea:focus,
+.island-form-group select:focus {
+  outline: none;
+  border-color: var(--color-primary-dark);
+}
+
+.island-form-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.island-form-save-btn {
+  background-color: var(--color-primary);
+  color: var(--color-text-dark);
+  border: 2px solid var(--color-primary-dark);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all var(--transition-speed);
+}
+
+.island-form-save-btn:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.island-form-cancel-btn {
+  background: transparent;
+  border: 2px solid var(--color-text-muted);
+  color: var(--color-text-muted);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all var(--transition-speed);
+}
+
+.island-form-cancel-btn:hover {
+  background-color: var(--color-bg-warm);
+}

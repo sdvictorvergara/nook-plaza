@@ -2,6 +2,7 @@ import { Route, Switch } from "wouter";
 import Home from "@/pages/Home/Home";
 import About from "@/pages/About/About";
 import Contact from "@/pages/Contact/Contact";
+import News from "@/pages/News/News";
 import Terms from "@/pages/Terms/Terms";
 import NotFound from "@/pages/NotFound/NotFound";
 
@@ -12,6 +13,7 @@ function Router() {
       <Route path="/home" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/news" component={News} />
       <Route path="/terms" component={Terms} />
       <Route component={NotFound} />
     </Switch>

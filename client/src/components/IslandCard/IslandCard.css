@@ -1,0 +1,89 @@
+@import "../../styles/global.css";
+
+.island-card {
+  background: var(--color-bg-light);
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.island-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.island-card-image {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-bg-warm);
+}
+
+.island-card-body {
+  padding: var(--spacing-sm) var(--spacing-sm) 0;
+  flex: 1;
+}
+
+.island-card-category {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-text-dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.island-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+
+.island-card-description {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.island-card-actions {
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+}
+
+.island-card-edit-btn,
+.island-card-delete-btn {
+  flex: 1;
+  padding: 6px 0;
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all var(--transition-speed);
+}
+
+.island-card-edit-btn {
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary-dark);
+  color: var(--color-text-dark);
+}
+
+.island-card-edit-btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.island-card-delete-btn {
+  background-color: transparent;
+  border: 2px solid var(--color-accent-red);
+  color: var(--color-accent-red);
+}
+
+.island-card-delete-btn:hover {
+  background-color: var(--color-accent-red);
+  color: #fff;
+}
